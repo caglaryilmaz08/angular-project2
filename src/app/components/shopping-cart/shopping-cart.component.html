@@ -1,0 +1,63 @@
+<app-movie-categories></app-movie-categories>
+<main class="container">
+    <div class="row">
+        <section class="col-lg-9">
+            <div class="show-cart" *ngIf="cart.length > 0; else emptyCart">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col"></th>
+                            <th scope="col">Product</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Total</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of cart">
+                            <td>
+                                <img src="{{ item.product.imageUrl }}" alt="" class="imageInCart" />
+                            </td>
+
+                            <th scope="row">
+                                {{ item.product.name }}
+                            </th>
+                            <td>{{ item.product.price }} Kr</td>
+                            <td>{{ item.quantity }}</td>
+                            <td>{{ item.product.price * item.quantity }} Kr</td>
+                            <td>
+                                <p>
+                                    <a routerLink="/cart" class="action-remove" (click)="removeFromCart(item.product.id)">
+                                        <img src="../../../../assets/images/remove.png" class="img-fluid" alt="cart" style="height: 20px; width: 20px;"/>
+                                    </a>
+                                </p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="cart-area">
+                            <p class="font-weight-bold">
+                                Subtotal:
+                                <span class="subtotal "> {{ getTotalPrice() }} Kr</span>
+                            </p>
+                            <div class="proceed-checkout">
+                                <button routerLink="/checkout" class="checkout-button" routerLink="/checkout">
+                  Proceed to checkout
+                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <ng-template #emptyCart>
+                <div class="empty-cart">
+                    <p>Your shopping cart is empty.</p>
+                    <p>Search movies <a routerLink="/">here.</a></p>
+                </div>
+            </ng-template>
+        </section>
+    </div>
+</main>

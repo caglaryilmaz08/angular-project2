@@ -1,0 +1,24 @@
+<nav class="categories">
+
+    <div>
+        <ul>
+
+            <li>
+                <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+            </li>
+
+            <li id="category-{{ category.id }}" *ngFor="let category of categories">
+
+                <a routerLink="/" (click)="filterProducts(category.id)">{{ category.name }}</a>
+                
+            </li>
+
+            <li><a routerLink="/admin" routerLinkActive="active">Admin</a></li>
+
+            <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
+
+        </ul>
+
+    </div>
+
+</nav>

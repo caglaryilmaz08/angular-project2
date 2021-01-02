@@ -1,0 +1,43 @@
+.product-title {
+    margin-top: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.product-img {
+    width: 350px;
+    height: 550px;
+}
+
+h4 {
+    color: black;
+}
+
+.movie-details {
+    margin-bottom: 3%;
+}
+
+.buy-button {
+    background-color: steelblue;
+    border-color: black;
+    color: black;
+}
+
+.buy-button:hover {
+    background-color: black;
+    color: steelblue;
+}
+
+.cart-button {
+    background-color: yellowgreen;
+    border-color: black;
+    color: black;
+}
+
+.cart-button:hover {
+    background-color:black;
+    color: yellowgreen;
+}
+
+li {
+    margin-top: 10px;
+}

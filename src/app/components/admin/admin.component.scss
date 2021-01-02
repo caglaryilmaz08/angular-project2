@@ -1,0 +1,25 @@
+.row {
+    padding: 2%;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20%;
+}
+
+th,
+td {
+    border-bottom: 1px solid rgb(190, 188, 188);
+    text-align: left;
+    padding-top: 10px;
+}
+
+h2 {
+    text-align: center;
+}
+
+i {
+    color: red;
+    cursor: pointer;
+}

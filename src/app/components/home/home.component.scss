@@ -1,0 +1,15 @@
+.movie-poster {
+    margin: 20px;
+    width: 250px;
+    height: 400px;
+    box-shadow: 10px 10px 5px grey;
+}
+
+.movie-poster:hover {
+    border: solid #a50f16 2px;
+}
+
+.movie-title {
+    text-align: center;
+    color: #a50f16;
+}

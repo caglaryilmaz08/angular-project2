@@ -1,0 +1,28 @@
+.container {
+    padding: 5%;
+    background-color: yellowgreen;
+    margin: 50px 0 50px 100px;
+    border-left: 30px solid rgb(43, 40, 40);
+}
+
+.confirmation {
+    text-align: center;
+    border: 3px solid black;
+    padding: 20px;
+    color: black;
+}
+
+h1 {
+    font: bold 60px/80px Georgia, serif;
+}
+
+.confirm-button {
+    background-color: steelblue;
+    border-color: black;
+    color: black;
+}
+
+.confirm-button:hover {
+    background-color: black;
+    color: steelblue;
+}

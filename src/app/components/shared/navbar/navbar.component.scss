@@ -1,0 +1,41 @@
+.navbar {
+    background-color: steelblue;
+}
+
+
+a.navbar-brand {
+    color: black;
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+
+#cart {
+    color: black;
+}
+
+
+input[type="text"] {
+    background-color: lightyellow;
+    color: black;
+    margin-right: 0.5rem;
+    height: 25px;
+    text-align: center;
+}
+
+
+input[type="text"]:focus {
+    outline: none;
+}
+
+
+.search-icon {
+    margin-right: 0.5rem;
+    cursor: pointer;
+}
+
+
+.cart-icon {
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+}

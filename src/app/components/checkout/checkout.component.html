@@ -1,0 +1,103 @@
+<app-movie-categories></app-movie-categories>
+<main class="container">
+    <div class="row">
+        <section class="col-lg-10">
+            <div>
+                <h2>Your Details</h2>
+            </div>
+            <form class="checkout-form" id="checkoutForm" [formGroup]="orderForm" (ngSubmit)="onSubmit()">
+                <div class="form-row">
+                    <div class="form-group col-6">
+                        <input type="text" formControlName="firstName" class="form-control" id="inputName4" placeholder="First name" required />
+                    </div>
+                    <div class="form-group col-6">
+                        <input type="text" formControlName="lastName" class="form-control" id="inputLastName" placeholder="Last name" required />
+                    </div>
+                </div>
+                <div formGroupName="address">
+                    <div class="form-group">
+                        <input type="text" formControlName="street" class="form-control" id="inputAddress" placeholder="Address" required />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" formControlName="city" class="form-control" id="inputCity" placeholder="City" required />
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-6">
+                            <input type="text" formControlName="country" class="form-control" id="inputCountry" placeholder="Country" required />
+                        </div>
+                        <div class="form-group col-6">
+                            <input type="text" formControlName="zip" class="form-control" id="inputZip" placeholder="Zip code" required />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="text" formControlName="email" class="form-control" id="inputEmail" placeholder="Email address" required />
+                </div>
+                <div class="form-group">
+                    <input type="text" formControlName="phone" class="form-control" id="inputPhone" placeholder="Phone number" required />
+                </div>
+            </form>
+
+            <div class="payment-options">
+                <div>
+                    <h2>Payment</h2>
+                </div>
+                <form [formGroup]="selectPaymentForm">
+                    <div class="payment-img">
+                        <img src="../../../assets/images/Visa.png" alt="Visa" class="img-fluid" />
+                    </div>
+                    <input type="radio" formControlName="payment" value="Visa" />
+                    <div class="payment-img">
+                        <img src="../../../assets/images/Mastercard.png" alt="Mastercard" class="img-fluid" />
+                    </div>
+                    <input type="radio" formControlName="payment" value="Mastercard" />
+                    <div class="payment-img">
+                        <img src="../../../assets/images/Paypal.png" alt="PayPal" class="img-fluid" />
+                    </div>
+                    <input type="radio" formControlName="payment" value="Paypal" />
+                </form>
+            </div>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col">Product</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Total</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of cart">
+                        <td>
+                            <img src="{{ item.product.imageUrl }}" alt="" class="imageInCart" />
+                        </td>
+                        <th scope="row" class="name-movie">
+                            {{ item.product.name }}
+                        </th>
+                        <td>{{ item.product.price }} Kr</td>
+                        <td>{{ item.quantity }}</td>
+                        <td>{{ item.product.price }} Kr</td>
+                        <td>
+                            <p class="type-movie">
+                                <a routerLink="/checkout" class="action-remove" (click)="removeFromCart(item.product.id)"> <i class="fas fa-trash-alt"></i></a>
+                            </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div>
+                <p class=" checkout-total">
+                    Total:
+                    <span>  {{ getTotalPrice() }} Kr</span>
+                </p>
+                <div class="checkout">
+                    <button type="submit" class="checkout-button" form="checkoutForm"> Checkout</button>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
